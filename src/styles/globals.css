@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 *,
 *::before,
 *::after {
@@ -6,25 +8,35 @@
   box-sizing: border-box;
 }
 
-body {
-  box-sizing: border-box;
-}
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role="list"],
-ol[role="list"] {
-  list-style: none;
-}
-
 /* Set core root defaults */
+html {
+  font-size: 62.5%;
+}
+
+/* screens larger then Macbook Pro 16" (1728px) */
+@media only screen and (min-width: 1730px) {
+  html {
+    font-size: 75%;
+  }
+}
+
 html:focus-within {
   scroll-behavior: smooth;
 }
 
 /* Set core body defaults */
 body {
+  box-sizing: border-box;
   min-height: 100vh;
   text-rendering: optimizeSpeed;
+  background: #fafafa;
+  font-family: "Inter", sans-serif;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
 }
 
 /* A elements that don't have a class get default styles */
