@@ -25,7 +25,8 @@ const BlogsPrimary: React.FC = () => {
           <Image src={TestImage} alt="" />
         </BlogImage>
         <BlogContent>
-          <Link href="/">
+          {/* /blog/:slug */}
+          <Link href="/blog/Lorem-ipsum-dolor-sit-amet-consectetur">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam,
             hic?
           </Link>

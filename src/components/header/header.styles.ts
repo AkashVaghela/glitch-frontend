@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 const Header = styled.header`
   width: 100vw;
+  position: sticky;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -9,6 +11,8 @@ const Header = styled.header`
   padding: 0.5rem 2rem;
   border-bottom: 1px solid #d4d4d4;
   margin-bottom: 3.2rem;
+  z-index: 90;
+  background: #fafafa;
 `;
 
 const HeaderLogo = styled.span`

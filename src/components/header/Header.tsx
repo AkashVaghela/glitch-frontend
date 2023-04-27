@@ -24,11 +24,12 @@ const Header: React.FC = () => {
         <Image src={MenuSvg} alt="" priority />
       </MobileNavbar>
       <HeaderNavBar>
-        <Link href="/frontend">Frontend</Link>
-        <Link href="/frontend">Backend</Link>
-        <Link href="/frontend">AI</Link>
-        <Link href="/frontend">DevOps</Link>
-        <Link href="/frontend">Career</Link>
+        {/* /category/:category */}
+        <Link href="/category/frontend">Frontend</Link>
+        <Link href="/category/frontend">Backend</Link>
+        <Link href="/category/frontend">AI</Link>
+        <Link href="/category/frontend">DevOps</Link>
+        <Link href="/category/frontend">Career</Link>
       </HeaderNavBar>
       <HeaderCTA>
         <Link href="/auth/sign-up">Subscribe</Link>

@@ -148,8 +148,9 @@ const BlogItemContent = styled.div`
 
 const BlogImageSmall = styled.div`
   flex-basis: 6.4rem;
-  flex-grow: 0;
   flex-shrink: 0;
+  height: 6.4rem;
+  overflow: hidden;
 
   img {
     width: 100%;

@@ -1,9 +1,12 @@
 import Head from "next/head";
+import type { ReactElement } from "react";
+import type { NextPageWithLayout } from "./_app";
+import Layout from "@/components/layout/Layout";
 import Container from "@/components/container/Container";
 import BlogsPrimary from "@/components/blogs/blogs-primary/BlogsPrimary";
 import BlogsSecondary from "@/components/blogs/blogs-secondary/BlogsSecondary";
 
-export default function Home() {
+const Home: NextPageWithLayout = () => {
   return (
     <>
       <Head>
@@ -20,4 +23,10 @@ export default function Home() {
       </Container>
     </>
   );
-}
+};
+
+Home.getLayout = function getLayout(page: ReactElement) {
+  return <Layout>{page}</Layout>;
+};
+
+export default Home;
