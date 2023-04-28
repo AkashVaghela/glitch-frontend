@@ -1,4 +1,4 @@
-import React from "react";
+import Link from "next/link";
 import { Rowdies } from "next/font/google";
 import { StyledFooter, FooterDescription, Copyright } from "./footer.styles";
 import { HeaderLogo } from "../header/header.styles";
@@ -9,8 +9,10 @@ const Footer = () => {
   return (
     <StyledFooter>
       <HeaderLogo className={rowdies.className}>
-        G<span>lit</span>
-        ch
+        <Link href="/">
+          G<span>lit</span>
+          ch
+        </Link>
       </HeaderLogo>
       <FooterDescription>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni

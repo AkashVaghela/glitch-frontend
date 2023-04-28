@@ -1,5 +1,4 @@
-import React from "react";
-import { Rowdies } from "next/font/google";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -7,18 +6,21 @@ import {
   HeaderLogo,
   HeaderNavBar,
   HeaderCTA,
+  Profile,
   MobileNavbar,
 } from "./header.styles";
 import MenuSvg from "@/assets/menu.svg";
 
-const rowdies = Rowdies({ weight: "700", subsets: ["latin"] });
-
 const Header: React.FC = () => {
+  const [loggedIn, setLoggedIn] = useState(false);
+
   return (
     <StyledHeader>
-      <HeaderLogo className={rowdies.className}>
-        G<span>lit</span>
-        ch
+      <HeaderLogo>
+        <Link href="/">
+          G<span>lit</span>
+          ch
+        </Link>
       </HeaderLogo>
       <MobileNavbar>
         <Image src={MenuSvg} alt="" priority />
@@ -31,9 +33,29 @@ const Header: React.FC = () => {
         <Link href="/category/frontend">DevOps</Link>
         <Link href="/category/frontend">Career</Link>
       </HeaderNavBar>
-      <HeaderCTA>
-        <Link href="/auth/sign-up">Subscribe</Link>
-      </HeaderCTA>
+      {loggedIn ? (
+        <Profile>
+          <button type="button">account</button>
+          <ul>
+            <li>
+              <Link href="/user/profile">profile</Link>
+            </li>
+            <li>
+              <Link href="/user/bookmarks">bookmarks</Link>
+            </li>
+            {/* <li>
+              <Link href="/contact">contact</Link>
+            </li> */}
+            <li>
+              <Link href="/">log out</Link>
+            </li>
+          </ul>
+        </Profile>
+      ) : (
+        <HeaderCTA>
+          <Link href="/auth/sign-up">Subscribe</Link>
+        </HeaderCTA>
+      )}
     </StyledHeader>
   );
 };

@@ -148,6 +148,12 @@ const InputContainer = styled.div`
     left: 1rem;
     transform: translateY(-50%);
   }
+
+  img {
+    @media only screen and (max-width: 425px) {
+      width: 2rem;
+    }
+  }
 `;
 
 export { Container, ImageContainer, FormContainer, InputContainer };

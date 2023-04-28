@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const FormContainer = styled.div`
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,6 +8,7 @@ const FormContainer = styled.div`
   gap: 1rem;
   width: clamp(20%, 300px, 90%);
   margin-inline: auto;
+  margin-bottom: 3.2rem;
 
   button[type="submit"] {
     width: 100%;
@@ -27,7 +27,7 @@ const InputContainer = styled.div`
   position: relative;
   width: 100%;
 
-  input:is([type="email"]) {
+  input:is([type="text"], [type="email"], [type="password"]) {
     width: 100%;
     padding: 1rem;
     border-radius: .4rem;
@@ -35,8 +35,8 @@ const InputContainer = styled.div`
     border: 1px solid #a3a3a3;
     padding-left: 4rem;
   }
-  
-  input:is([type="email"])::placeholder {
+
+  input:is([type="text"], [type="email"], [type="password"])::placeholder {
     color: #737373;
     font-size: 1.3rem;
     text-transform: capitalize;
