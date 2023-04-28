@@ -18,7 +18,7 @@ import TestImage from "@/assets/test.jpg";
 import BookmarkIcon from "@/assets/bookmark.svg";
 
 const Fallback = () => {
-  return <StyledFallback>You don't have bookmarks :(</StyledFallback>;
+  return <StyledFallback>You don&apos;t have bookmarks :(</StyledFallback>;
 };
 
 const Bookmarks: NextPageWithLayout = () => {
