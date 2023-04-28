@@ -12,7 +12,7 @@ import {
 import MenuSvg from "@/assets/menu.svg";
 
 const Header: React.FC = () => {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
 
   return (
     <StyledHeader>
