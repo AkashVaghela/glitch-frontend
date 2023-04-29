@@ -1,14 +1,11 @@
 import Link from "next/link";
-import { Rowdies } from "next/font/google";
 import { StyledFooter, FooterDescription, Copyright } from "./footer.styles";
 import { HeaderLogo } from "../header/header.styles";
-
-const rowdies = Rowdies({ weight: "700", subsets: ["latin"] });
 
 const Footer = () => {
   return (
     <StyledFooter>
-      <HeaderLogo className={rowdies.className}>
+      <HeaderLogo>
         <Link href="/">
           G<span>lit</span>
           ch
