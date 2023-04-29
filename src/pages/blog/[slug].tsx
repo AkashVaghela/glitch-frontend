@@ -16,7 +16,7 @@ import {
   RecommendedBlog,
   RecommendedBlogImage,
   RecommendedBlogContent,
-} from "./slug.styles";
+} from "../../styles/pages/slug.styles";
 import LinkedinIcon from "@/assets/linkedin.svg";
 import TwitterIcon from "@/assets/twitter.svg";
 import LinkIcon from "@/assets/link.svg";
@@ -24,6 +24,7 @@ import BookmarkIcon from "@/assets/bookmark.svg";
 import LikeOutlineIcon from "@/assets/like-outline.svg";
 import CommentsIcon from "@/assets/comments.svg";
 import TestImage from "@/assets/test.jpg";
+import { secondaryBlogs } from "@/data/data";
 
 const Slug: NextPageWithLayout = () => {
   return (
@@ -167,36 +168,22 @@ const Slug: NextPageWithLayout = () => {
       </Blog>
       <Recommendations>
         <h2>Recommended for you</h2>
-        <RecommendedBlog>
-          <RecommendedBlogImage>
-            <Image src={TestImage} alt="" />
-          </RecommendedBlogImage>
-          <RecommendedBlogContent>
-            <span>12/12/1221</span>
-            {/* /blog/test-slug */}
-            <Link href="/blog/test-slug">
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore
-                maxime alias magnam.
-              </p>
-            </Link>
-          </RecommendedBlogContent>
-        </RecommendedBlog>
-        <RecommendedBlog>
-          <RecommendedBlogImage>
-            <Image src={TestImage} alt="" />
-          </RecommendedBlogImage>
-          <RecommendedBlogContent>
-            <span>12/12/1221</span>
-            {/* /blog/test-slug */}
-            <Link href="/blog/test-slug">
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore
-                maxime alias magnam.
-              </p>
-            </Link>
-          </RecommendedBlogContent>
-        </RecommendedBlog>
+        {secondaryBlogs.map((item) => {
+          return (
+            <RecommendedBlog key={item.id}>
+              <RecommendedBlogImage>
+                <Image src={item.imageUrl} alt="" />
+              </RecommendedBlogImage>
+              <RecommendedBlogContent>
+                <span>{item.date}</span>
+                {/* /blog/test-slug */}
+                <Link href={`/blog/${encodeURIComponent(item.slug)}`}>
+                  <p>{item.title}</p>
+                </Link>
+              </RecommendedBlogContent>
+            </RecommendedBlog>
+          );
+        })}
       </Recommendations>
     </Container>
   );

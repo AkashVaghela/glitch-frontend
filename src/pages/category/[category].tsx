@@ -4,44 +4,34 @@ import Link from "next/link";
 import type { NextPageWithLayout } from "../_app";
 import Layout from "@/components/layout/Layout";
 import Container from "@/components/container/Container";
-import { BlogsList, Blog, BlogImage, BlogContent } from "./category.styles";
-import TestImage from "@/assets/test.jpg";
+import {
+  BlogsList,
+  Blog,
+  BlogImage,
+  BlogContent,
+} from "../../styles/pages/category.styles";
+import { secondaryBlogs } from "@/data/data";
 
 const Category: NextPageWithLayout = () => {
   return (
     <Container>
       <BlogsList>
-        <Blog>
-          <BlogImage>
-            <Image src={TestImage} alt="" />
-          </BlogImage>
-          <BlogContent>
-            <span>12/12/1221</span>
-            {/* /blog/test-slug */}
-            <Link href="/blog/test-slug">
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore
-                maxime alias magnam.
-              </p>
-            </Link>
-          </BlogContent>
-        </Blog>
-
-        <Blog>
-          <BlogImage>
-            <Image src={TestImage} alt="" />
-          </BlogImage>
-          <BlogContent>
-            <span>12/12/1221</span>
-            {/* /blog/test-slug */}
-            <Link href="/blog/test-slug">
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore
-                maxime alias magnam.
-              </p>
-            </Link>
-          </BlogContent>
-        </Blog>
+        {secondaryBlogs.map((item) => {
+          return (
+            <Blog key={item.id}>
+              <BlogImage>
+                <Image src={item.imageUrl} alt="" />
+              </BlogImage>
+              <BlogContent>
+                <span>{item.date}</span>
+                {/* /blog/test-slug */}
+                <Link href={`/blog/${encodeURIComponent(item.slug)}`}>
+                  <p>{item.title}</p>
+                </Link>
+              </BlogContent>
+            </Blog>
+          );
+        })}
       </BlogsList>
     </Container>
   );

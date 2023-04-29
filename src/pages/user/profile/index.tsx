@@ -2,7 +2,10 @@ import type { ReactElement } from "react";
 import type { NextPageWithLayout } from "../../_app";
 import Image from "next/image";
 import Layout from "@/components/layout/Layout";
-import { FormContainer, InputContainer } from "./profile.styles";
+import {
+  FormContainer,
+  InputContainer,
+} from "../../../styles/pages/profile.styles";
 import UserIcon from "@/assets/user.svg";
 import MailIcon from "@/assets/mail.svg";
 import PasswordIcon from "@/assets/password.svg";

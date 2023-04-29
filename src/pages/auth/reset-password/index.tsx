@@ -1,5 +1,8 @@
 import Image from "next/image";
-import { FormContainer, InputContainer } from "./reset-password.styles";
+import {
+  FormContainer,
+  InputContainer,
+} from "../../../styles/pages/reset-password.styles";
 import HideIcon from "@/assets/hide.svg";
 
 const ResetPassword = () => {

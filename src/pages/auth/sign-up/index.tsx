@@ -6,7 +6,7 @@ import {
   ImageContainer,
   FormContainer,
   InputContainer,
-} from "./sign-up.styles";
+} from "../../../styles/pages/sign-up.styles";
 import TestImage from "@/assets/test.jpg";
 import UserIcon from "@/assets/user.svg";
 import MailIcon from "@/assets/mail.svg";

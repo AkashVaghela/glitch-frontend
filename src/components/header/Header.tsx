@@ -10,9 +10,10 @@ import {
   MobileNavbar,
 } from "./header.styles";
 import MenuSvg from "@/assets/menu.svg";
+import { navbar } from "@/data/data.js";
 
 const Header: React.FC = () => {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
 
   return (
     <StyledHeader>
@@ -27,11 +28,16 @@ const Header: React.FC = () => {
       </MobileNavbar>
       <HeaderNavBar>
         {/* /category/:category */}
-        <Link href="/category/frontend">Frontend</Link>
-        <Link href="/category/frontend">Backend</Link>
-        <Link href="/category/frontend">AI</Link>
-        <Link href="/category/frontend">DevOps</Link>
-        <Link href="/category/frontend">Career</Link>
+        {navbar.map((item) => {
+          return (
+            <Link
+              key={item.id}
+              href={`/category/${encodeURIComponent(item.category)}`}
+            >
+              {item.category}
+            </Link>
+          );
+        })}
       </HeaderNavBar>
       {loggedIn ? (
         <Profile>

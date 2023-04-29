@@ -13,12 +13,12 @@ import {
   BlogTitle,
   BlogFooter,
   Fallback as StyledFallback,
-} from "./bookmarks.styles";
-import TestImage from "@/assets/test.jpg";
+} from "../../../styles/pages/bookmarks.styles";
 import BookmarkIcon from "@/assets/bookmark.svg";
+import { secondaryBlogs } from "@/data/data";
 
 const Fallback = () => {
-  return <StyledFallback>You don't have bookmarks :(</StyledFallback>;
+  return <StyledFallback>You don&apos;t have bookmarks :(</StyledFallback>;
 };
 
 const Bookmarks: NextPageWithLayout = () => {
@@ -30,47 +30,27 @@ const Bookmarks: NextPageWithLayout = () => {
 
       {blogs.length > 0 && (
         <BlogsList>
-          <Blog>
-            <BlogImage>
-              <Image src={TestImage} alt="" />
-            </BlogImage>
-            <BlogContent>
-              <BlogTitle>
-                {/* /blog/test-slug */}
-                <Link href="/blog/test-slug">
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Labore maxime alias magnam.
-                  </p>
-                </Link>
-              </BlogTitle>
-              <BlogFooter>
-                <span>12/12/1221</span>
-                <Image src={BookmarkIcon} alt="" />
-              </BlogFooter>
-            </BlogContent>
-          </Blog>
-
-          <Blog>
-            <BlogImage>
-              <Image src={TestImage} alt="" />
-            </BlogImage>
-            <BlogContent>
-              <BlogTitle>
-                {/* /blog/test-slug */}
-                <Link href="/blog/test-slug">
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Labore maxime alias magnam.
-                  </p>
-                </Link>
-              </BlogTitle>
-              <BlogFooter>
-                <span>12/12/1221</span>
-                <Image src={BookmarkIcon} alt="" />
-              </BlogFooter>
-            </BlogContent>
-          </Blog>
+          {secondaryBlogs.map((item) => {
+            return (
+              <Blog key={item.id}>
+                <BlogImage>
+                  <Image src={item.imageUrl} alt="" />
+                </BlogImage>
+                <BlogContent>
+                  <BlogTitle>
+                    {/* /blog/test-slug */}
+                    <Link href={`/blog/${encodeURIComponent(item.slug)}`}>
+                      <p>{item.title}</p>
+                    </Link>
+                  </BlogTitle>
+                  <BlogFooter>
+                    <span>{item.date}</span>
+                    <Image src={BookmarkIcon} alt="" />
+                  </BlogFooter>
+                </BlogContent>
+              </Blog>
+            );
+          })}
         </BlogsList>
       )}
     </Container>

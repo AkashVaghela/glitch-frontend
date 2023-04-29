@@ -12,7 +12,7 @@ import {
   BlogItemFooter,
   BlogImageSmall,
 } from "./blogs-primary.styles";
-import TestImage from "@/assets/test.jpg";
+import { primaryBlog, secondaryBlogs } from "@/data/data.js";
 
 const BlogsPrimary: React.FC = () => {
   return (
@@ -22,82 +22,33 @@ const BlogsPrimary: React.FC = () => {
       </BlogsHeader>
       <Blog>
         <BlogImage>
-          <Image src={TestImage} alt="" />
+          <Image src={primaryBlog.imageUrl} alt="" />
         </BlogImage>
         <BlogContent>
           {/* /blog/:slug */}
-          <Link href="/blog/Lorem-ipsum-dolor-sit-amet-consectetur">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam,
-            hic?
+          <Link href={`/blog/${encodeURIComponent(primaryBlog.slug)}`}>
+            {primaryBlog.title}
           </Link>
-          <span>12/12/2022</span>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit
-            dolore quisquam culpa odio omnis quia deserunt quidem adipisci vel
-            incidunt tempora cupiditate cum provident quaerat accusantium
-            dignissimos expedita eligendi, perspiciatis ipsum porro nostrum
-            optio. Fugit, exercitationem. Ipsum a inventore quae architecto
-            amet. Similique.
-          </p>
+          <span>{primaryBlog.date}</span>
+          <p>{primaryBlog.description}</p>
         </BlogContent>
       </Blog>
       <BlogsList>
-        <BlogItem>
-          <BlogItemContent>
-            <Link href="/">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-                eum illum illo?
-              </p>
-            </Link>
-            <BlogImageSmall>
-              <Image src={TestImage} alt="" />
-            </BlogImageSmall>
-          </BlogItemContent>
-          <BlogItemFooter>12/04/2022</BlogItemFooter>
-        </BlogItem>
-        <BlogItem>
-          <BlogItemContent>
-            <Link href="/">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-                eum illum illo?
-              </p>
-            </Link>
-            <BlogImageSmall>
-              <Image src={TestImage} alt="" />
-            </BlogImageSmall>
-          </BlogItemContent>
-          <BlogItemFooter>12/04/2022</BlogItemFooter>
-        </BlogItem>
-        <BlogItem>
-          <BlogItemContent>
-            <Link href="/">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-                eum illum illo?
-              </p>
-            </Link>
-            <BlogImageSmall>
-              <Image src={TestImage} alt="" />
-            </BlogImageSmall>
-          </BlogItemContent>
-          <BlogItemFooter>12/04/2022</BlogItemFooter>
-        </BlogItem>
-        <BlogItem>
-          <BlogItemContent>
-            <Link href="/">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-                eum illum illo?
-              </p>
-            </Link>
-            <BlogImageSmall>
-              <Image src={TestImage} alt="" />
-            </BlogImageSmall>
-          </BlogItemContent>
-          <BlogItemFooter>12/04/2022</BlogItemFooter>
-        </BlogItem>
+        {secondaryBlogs.map((item) => {
+          return (
+            <BlogItem key={item.id}>
+              <BlogItemContent>
+                <Link href={`/blog/${encodeURIComponent(primaryBlog.slug)}`}>
+                  <p>{item.title}</p>
+                </Link>
+                <BlogImageSmall>
+                  <Image src={item.imageUrl} alt="" />
+                </BlogImageSmall>
+              </BlogItemContent>
+              <BlogItemFooter>{item.date}</BlogItemFooter>
+            </BlogItem>
+          );
+        })}
       </BlogsList>
     </StyledBlogsPrimary>
   );

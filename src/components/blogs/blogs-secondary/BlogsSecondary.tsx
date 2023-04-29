@@ -7,7 +7,7 @@ import {
   BlogTitle,
 } from "./blogs-secondary.styles";
 import { BlogsHeader, BlogsList } from "../blogs-primary/blogs-primary.styles";
-import TestImage from "@/assets/test.jpg";
+import { secondaryBlogs } from "@/data/data.js";
 
 const BlogsSecondary: React.FC = () => {
   return (
@@ -16,54 +16,21 @@ const BlogsSecondary: React.FC = () => {
         <span>backend</span>
       </BlogsHeader>
       <BlogsList>
-        <BlogItem>
-          <BlogImage>
-            <Image src={TestImage} alt=""></Image>
-          </BlogImage>
-          <BlogTitle>
-            <Link href="/">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum
-              nobis accusamus voluptate.
-            </Link>
-          </BlogTitle>
-          <span>12/12/1222</span>
-        </BlogItem>{" "}
-        <BlogItem>
-          <BlogImage>
-            <Image src={TestImage} alt=""></Image>
-          </BlogImage>
-          <BlogTitle>
-            <Link href="/">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum
-              nobis accusamus voluptate.
-            </Link>
-          </BlogTitle>
-          <span>12/12/1222</span>
-        </BlogItem>{" "}
-        <BlogItem>
-          <BlogImage>
-            <Image src={TestImage} alt=""></Image>
-          </BlogImage>
-          <BlogTitle>
-            <Link href="/">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum
-              nobis accusamus voluptate.
-            </Link>
-          </BlogTitle>
-          <span>12/12/1222</span>
-        </BlogItem>{" "}
-        <BlogItem>
-          <BlogImage>
-            <Image src={TestImage} alt=""></Image>
-          </BlogImage>
-          <BlogTitle>
-            <Link href="/">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum
-              nobis accusamus voluptate.
-            </Link>
-          </BlogTitle>
-          <span>12/12/1222</span>
-        </BlogItem>
+        {secondaryBlogs.map((item) => {
+          return (
+            <BlogItem key={item.id}>
+              <BlogImage>
+                <Image src={item.imageUrl} alt=""></Image>
+              </BlogImage>
+              <BlogTitle>
+                <Link href={`/blog/${encodeURIComponent(item.slug)}`}>
+                  {item.title}
+                </Link>
+              </BlogTitle>
+              <span>{item.date}</span>
+            </BlogItem>
+          );
+        })}
       </BlogsList>
     </StyledBlogsSecondary>
   );

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface LayoutProps {
-  signInPage?: string
+  signInPage?: string;
 }
 
 const Container = styled.div`
@@ -20,8 +20,8 @@ const Container = styled.div`
 `;
 
 const ImageContainer = styled.div<LayoutProps>`
-  grid-column: ${props => props.signInPage === "true" ? "6/-1" : "1/8"};
-  grid-row: ${props => props.signInPage === "true" && "1/-1"};
+  grid-column: ${(props) => (props.signInPage === "true" ? "6/-1" : "1/8")};
+  grid-row: ${(props) => props.signInPage === "true" && "1/-1"};
   height: 100%;
   overflow: hidden;
   position: relative;
@@ -34,12 +34,12 @@ const ImageContainer = styled.div<LayoutProps>`
     content: "";
     position: absolute;
     top: 0;
-    left: 0;    
+    left: 0;
     display: inline-block;
     width: 100%;
     height: 100%;
     z-index: 10;
-    background: rgba(0,0,0,.5);
+    background: rgba(0, 0, 0, 0.5);
   }
 
   img {
@@ -78,7 +78,7 @@ const ImageContainer = styled.div<LayoutProps>`
 `;
 
 const FormContainer = styled.div<LayoutProps>`
-  grid-column: ${props => props.signInPage === "true" ? "2/5" : "9/12"};
+  grid-column: ${(props) => (props.signInPage === "true" ? "2/5" : "9/12")};
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
@@ -101,14 +101,14 @@ const FormContainer = styled.div<LayoutProps>`
   }
 
   button[type="submit"] {
-    padding: .8rem;
+    padding: 0.8rem;
     font-size: 1.4rem;
     font-weight: 500;
     text-transform: capitalize;
     color: #fafafa;
     background: #0a0a0a;
     border: none;
-    border-radius: .4rem;
+    border-radius: 0.4rem;
   }
 
   p {
@@ -117,7 +117,8 @@ const FormContainer = styled.div<LayoutProps>`
     text-transform: capitalize;
     text-align: center;
 
-    a:link, a:visited {
+    a:link,
+    a:visited {
       color: #22c55e;
       font-weight: 600;
     }
@@ -130,13 +131,13 @@ const InputContainer = styled.div`
   input:is([type="text"], [type="email"], [type="password"]) {
     width: 100%;
     padding: 1rem;
-    border-radius: .4rem;
+    border-radius: 0.4rem;
     background: transparent;
     border: 1px solid #a3a3a3;
     padding-left: 4rem;
   }
 
-  input: is([type = "text"], [type = "email"], [type = "password"])::placeholder {
+  input:is([type="text"], [type="email"], [type="password"])::placeholder {
     color: #737373;
     font-size: 1.3rem;
     text-transform: capitalize;
