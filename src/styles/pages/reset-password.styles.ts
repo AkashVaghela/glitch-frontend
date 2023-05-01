@@ -34,7 +34,10 @@ const InputContainer = styled.div`
     background: transparent;
     border: 1px solid #a3a3a3;
     padding-right: 4rem;
+    color: #737373;
+    font-size: 1.3rem;
   }
+
   input:is([type="password"])::placeholder {
     color: #737373;
     font-size: 1.3rem;

@@ -34,6 +34,8 @@ const InputContainer = styled.div`
     background: transparent;
     border: 1px solid #a3a3a3;
     padding-left: 4rem;
+    color: #737373;
+    font-size: 1.3rem;
   }
   
   input:is([type="email"])::placeholder {

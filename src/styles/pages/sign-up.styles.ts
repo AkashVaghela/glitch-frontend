@@ -77,7 +77,7 @@ const ImageContainer = styled.div<LayoutProps>`
   }
 `;
 
-const FormContainer = styled.div<LayoutProps>`
+const FormContainer = styled.form<LayoutProps>`
   grid-column: ${(props) => (props.signInPage === "true" ? "2/5" : "9/12")};
   display: flex;
   flex-direction: column;
@@ -109,6 +109,12 @@ const FormContainer = styled.div<LayoutProps>`
     background: #0a0a0a;
     border: none;
     border-radius: 0.4rem;
+    cursor: pointer;
+  }
+
+  button[disabled] {
+    opacity: .8;
+    cursor: not-allowed;
   }
 
   p {
@@ -135,6 +141,8 @@ const InputContainer = styled.div`
     background: transparent;
     border: 1px solid #a3a3a3;
     padding-left: 4rem;
+    color: #737373;
+    font-size: 1.3rem;
   }
 
   input:is([type="text"], [type="email"], [type="password"])::placeholder {
@@ -157,4 +165,10 @@ const InputContainer = styled.div`
   }
 `;
 
-export { Container, ImageContainer, FormContainer, InputContainer };
+const ErrorContainer = styled.div`
+  color: #dc2626;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+`;
+
+export { Container, ImageContainer, FormContainer, InputContainer, ErrorContainer };

@@ -2,7 +2,7 @@ import Image from "next/image";
 import {
   FormContainer,
   InputContainer,
-} from "../../../styles/pages/reset-password.styles";
+} from "@/styles/pages/reset-password.styles";
 import HideIcon from "@/assets/hide.svg";
 
 const ResetPassword = () => {
