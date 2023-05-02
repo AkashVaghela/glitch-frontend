@@ -1,4 +1,3 @@
-mobile navigation
 back to top button
 update content
 auth context
@@ -17,3 +16,4 @@ CI/CD
 i11n
 dark mode
 email list
+3 free blogs without sign in

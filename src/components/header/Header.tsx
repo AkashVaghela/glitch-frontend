@@ -8,12 +8,37 @@ import {
   HeaderCTA,
   Profile,
   MobileNavbar,
+  MobileMenu,
 } from "./header.styles";
-import MenuSvg from "@/assets/menu.svg";
+import MenuIcon from "@/assets/menu.svg";
+import CloseIcon from "@/assets/close.svg";
 import { navbar } from "@/data/data";
+
+const navigation = [
+  {
+    id: 1,
+    href: "/user/profile",
+    title: "profile",
+  },
+  {
+    id: 2,
+    href: "/user/bookmarks",
+    title: "bookmarks",
+  },
+  {
+    id: 3,
+    href: "/",
+    title: "log out",
+  },
+];
 
 const Header: React.FC = () => {
   const [loggedIn, setLoggedIn] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const navbarHandler = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <StyledHeader>
@@ -23,11 +48,48 @@ const Header: React.FC = () => {
           ch
         </Link>
       </HeaderLogo>
-      <MobileNavbar>
-        <Image src={MenuSvg} alt="" priority />
+
+      {/* Mobile navigation */}
+      <MobileNavbar onClick={navbarHandler}>
+        {isOpen ? (
+          <Image src={CloseIcon} alt="" priority />
+        ) : (
+          <Image src={MenuIcon} alt="" priority />
+        )}
       </MobileNavbar>
+
+      {isOpen && (
+        <MobileMenu>
+          <h2>categories</h2>
+          <ul>
+            {navbar.map((item) => {
+              return (
+                <li key={item.id} onClick={navbarHandler}>
+                  <Link href={`/category/${encodeURIComponent(item.category)}`}>
+                    {item.category}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+
+          {loggedIn && <h2>profile</h2>}
+          {loggedIn && (
+            <ul>
+              {navigation.map((item) => {
+                return (
+                  <li key={item.id} onClick={navbarHandler}>
+                    <Link href={item.href}>{item.title}</Link>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+        </MobileMenu>
+      )}
+
+      {/* Desktop navigation */}
       <HeaderNavBar>
-        {/* /category/:category */}
         {navbar.map((item) => {
           return (
             <Link
@@ -39,6 +101,7 @@ const Header: React.FC = () => {
           );
         })}
       </HeaderNavBar>
+
       {loggedIn ? (
         <Profile>
           <button type="button">account</button>
@@ -49,9 +112,6 @@ const Header: React.FC = () => {
             <li>
               <Link href="/user/bookmarks">bookmarks</Link>
             </li>
-            {/* <li>
-              <Link href="/contact">contact</Link>
-            </li> */}
             <li>
               <Link href="/">log out</Link>
             </li>
