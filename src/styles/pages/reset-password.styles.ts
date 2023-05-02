@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const FormContainer = styled.div`
+const FormContainer = styled.form`
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -58,4 +58,10 @@ const InputContainer = styled.div`
   }
 `;
 
-export { FormContainer, InputContainer };
+const ErrorContainer = styled.div`
+  color: #dc2626;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+`;
+
+export { FormContainer, InputContainer, ErrorContainer };

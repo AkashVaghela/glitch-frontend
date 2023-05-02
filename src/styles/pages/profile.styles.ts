@@ -1,59 +1,54 @@
 import styled from "styled-components";
 
-const FormContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  width: clamp(20%, 300px, 90%);
-  margin-inline: auto;
+const PageContainer = styled.div`
   margin-bottom: 3.2rem;
+  width: clamp(30%, 400px, 90%);
+  margin-inline: auto;
+  text-align: left;
 
-  button[type="submit"] {
-    width: 100%;
-    padding: .8rem;
-    font-size: 1.4rem;
-    font-weight: 500;
+  h1 {
+    font-weight: 600;
     text-transform: capitalize;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  a:is(:link, :active, :hover, :visited) {
+    display: inline-block;
     color: #fafafa;
     background: #0a0a0a;
-    border: none;
-    border-radius: .4rem;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 1rem;
   }
 `;
 
-const InputContainer = styled.div`
-  position: relative;
-  width: 100%;
+const DetailsContainer = styled.div`
+  margin-bottom: 2rem;
+  font-weight: 500;
 
-  input:is([type="text"], [type="email"], [type="password"]) {
-    width: 100%;
-    padding: 1rem;
-    border-radius: .4rem;
-    background: transparent;
-    border: 1px solid #a3a3a3;
-    padding-left: 4rem;
-  }
-
-  input:is([type="text"], [type="email"], [type="password"])::placeholder {
+  span {
+    display: inline-block;
     color: #737373;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
     text-transform: capitalize;
   }
-
-  img {
-    position: absolute;
-    top: 50%;
-    left: 1rem;
-    transform: translateY(-50%);
+  
+  p {
+    color: #0a0a0a;
+    font-size: 1.4rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid #d4d4d4;
   }
 
-  img {
-    @media only screen and (max-width: 425px) {
-      width: 2rem;
-    }
+  p:not([datatype="email"]) {
+    text-transform: capitalize;
   }
 `;
 
-export { FormContainer, InputContainer };
+export { PageContainer, DetailsContainer };

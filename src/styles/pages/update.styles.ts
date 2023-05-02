@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
-const FormContainer = styled.form`
-  height: 100vh;
+const PageContainer = styled.div`
+  width: clamp(20%, 300px, 90%);
+  margin-inline: auto;
+`;
+
+const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,6 +13,7 @@ const FormContainer = styled.form`
   gap: 1rem;
   width: clamp(20%, 300px, 90%);
   margin-inline: auto;
+  margin-bottom: 3.2rem;
 
   button[type="submit"] {
     width: 100%;
@@ -27,18 +32,16 @@ const InputContainer = styled.div`
   position: relative;
   width: 100%;
 
-  input:is([type="email"]) {
+  input:is([type="text"], [type="email"], [type="password"]) {
     width: 100%;
     padding: 1rem;
     border-radius: .4rem;
     background: transparent;
     border: 1px solid #a3a3a3;
     padding-left: 4rem;
-    color: #737373;
-    font-size: 1.3rem;
   }
-  
-  input:is([type="email"])::placeholder {
+
+  input:is([type="text"], [type="email"], [type="password"])::placeholder {
     color: #737373;
     font-size: 1.3rem;
     text-transform: capitalize;
@@ -58,10 +61,11 @@ const InputContainer = styled.div`
   }
 `;
 
-const ErrorContainer = styled.div`
-  color: #dc2626;
-  font-size: 1.2rem;
-  text-transform: capitalize;
+const GoBackButton = styled.button`
+  border: none;
+  padding: 1rem;  
+  margin-bottom: 1.6rem;
+  margin-left: 1.5rem;
 `;
 
-export { FormContainer, InputContainer, ErrorContainer };
+export { PageContainer, FormContainer, InputContainer, GoBackButton };

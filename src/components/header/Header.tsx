@@ -13,7 +13,7 @@ import MenuSvg from "@/assets/menu.svg";
 import { navbar } from "@/data/data.js";
 
 const Header: React.FC = () => {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
 
   return (
     <StyledHeader>

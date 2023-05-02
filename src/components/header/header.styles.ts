@@ -57,7 +57,6 @@ const HeaderNavBar = styled.nav`
 const HeaderCTA = styled.button`
   border: none;
   color: #fafafa;
-  width: 10rem;
   background: #0a0a0a;
   padding: 0.5rem 1rem;
   font-size: 1.2rem;
