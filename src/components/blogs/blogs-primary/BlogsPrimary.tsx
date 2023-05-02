@@ -12,7 +12,7 @@ import {
   BlogItemFooter,
   BlogImageSmall,
 } from "./blogs-primary.styles";
-import { primaryBlog, secondaryBlogs } from "@/data/data.js";
+import { primaryBlog, secondaryBlogs } from "@/data/data";
 
 const BlogsPrimary: React.FC = () => {
   return (

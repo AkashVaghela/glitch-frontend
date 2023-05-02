@@ -1,7 +1,7 @@
 import type { ReactElement } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import type { NextPageWithLayout } from "../_app";
+import type { NextPageWithLayout } from "@/pages/_app";
 import Layout from "@/components/layout/Layout";
 import { Container } from "@/components/container/container.styles";
 import {
@@ -16,7 +16,7 @@ import {
   RecommendedBlog,
   RecommendedBlogImage,
   RecommendedBlogContent,
-} from "../../styles/pages/slug.styles";
+} from "@/styles/pages/slug.styles";
 import LinkedinIcon from "@/assets/linkedin.svg";
 import TwitterIcon from "@/assets/twitter.svg";
 import LinkIcon from "@/assets/link.svg";

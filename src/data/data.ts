@@ -56,11 +56,11 @@ const navbar = [
   },
   {
     id: 3,
-    category: "AI",
+    category: "ai",
   },
   {
     id: 4,
-    category: "DevOps",
+    category: "devops",
   },
   {
     id: 5,

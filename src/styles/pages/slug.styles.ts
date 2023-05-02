@@ -73,6 +73,7 @@ const BlogContent = styled.section`
     font-size: 1.6rem;
     margin-bottom: 1.6rem;
     color: #262626;
+    line-height: 1.5;
   }
 
   strong {

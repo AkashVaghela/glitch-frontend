@@ -2,7 +2,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactElement } from "react";
-import type { NextPageWithLayout } from "../../_app";
+import type { NextPageWithLayout } from "@/pages/_app";
 import Layout from "@/components/layout/Layout";
 import Container from "@/components/container/Container";
 import {
@@ -13,7 +13,7 @@ import {
   BlogTitle,
   BlogFooter,
   Fallback as StyledFallback,
-} from "../../../styles/pages/bookmarks.styles";
+} from "@/styles/pages/bookmarks.styles";
 import BookmarkIcon from "@/assets/bookmark.svg";
 import { secondaryBlogs } from "@/data/data";
 

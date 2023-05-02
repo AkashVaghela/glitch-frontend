@@ -7,7 +7,7 @@ import {
   BlogTitle,
 } from "./blogs-secondary.styles";
 import { BlogsHeader, BlogsList } from "../blogs-primary/blogs-primary.styles";
-import { secondaryBlogs } from "@/data/data.js";
+import { secondaryBlogs } from "@/data/data";
 
 const BlogsSecondary: React.FC = () => {
   return (

@@ -10,7 +10,7 @@ import {
   MobileNavbar,
 } from "./header.styles";
 import MenuSvg from "@/assets/menu.svg";
-import { navbar } from "@/data/data.js";
+import { navbar } from "@/data/data";
 
 const Header: React.FC = () => {
   const [loggedIn, setLoggedIn] = useState(true);

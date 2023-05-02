@@ -1,7 +1,7 @@
 import type { ReactElement } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import type { NextPageWithLayout } from "../_app";
+import type { NextPageWithLayout } from "@/pages/_app";
 import Layout from "@/components/layout/Layout";
 import Container from "@/components/container/Container";
 import {
@@ -9,7 +9,7 @@ import {
   Blog,
   BlogImage,
   BlogContent,
-} from "../../styles/pages/category.styles";
+} from "@/styles/pages/category.styles";
 import { secondaryBlogs } from "@/data/data";
 
 const Category: NextPageWithLayout = () => {

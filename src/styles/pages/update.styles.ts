@@ -39,6 +39,8 @@ const InputContainer = styled.div`
     background: transparent;
     border: 1px solid #a3a3a3;
     padding-left: 4rem;
+    color: #737373;
+    font-size: 1.3rem;
   }
 
   input:is([type="text"], [type="email"], [type="password"])::placeholder {
@@ -62,10 +64,17 @@ const InputContainer = styled.div`
 `;
 
 const GoBackButton = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  font-weight: 500;
   border: none;
+  color: #262626;
+  background: transparent;
   padding: 1rem;  
   margin-bottom: 1.6rem;
-  margin-left: 1.5rem;
 `;
 
 export { PageContainer, FormContainer, InputContainer, GoBackButton };

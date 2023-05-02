@@ -1,4 +1,19 @@
+mobile navigation
+back to top button
+update content
+auth context
+API integration
+pagination in catrgories page (infinite loading)
+breadcumbs in blog page and categories page
+share functionality of blog
+bookmark/ unbookmark blog
+like/ unlike blog
+comments
+bookmarks
+semantic tags & a11y
+test cases
+PWA
+CI/CD
 i11n
 dark mode
 email list
-comment system
