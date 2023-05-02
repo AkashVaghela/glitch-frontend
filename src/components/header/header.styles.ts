@@ -35,18 +35,25 @@ const HeaderNavBar = styled.nav`
   text-align: center;
   text-transform: uppercase;
 
-  a:link,
-  a:visited {
-    color: #171717;
-    font-weight: 500;
-    font-size: 1.3rem;
-    margin-right: 3rem;
-    text-decoration: none;
-  }
+  ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
 
-  a:hover,
-  a:active {
-    text-decoration: underline;
+    li {
+      a:is(:link, :visited) {
+        color: #171717;
+        font-weight: 500;
+        font-size: 1.3rem;
+        margin-right: 3rem;
+        text-decoration: none;
+      }
+
+      a:is(:hover, :active) {
+        font-weight: 600;
+        text-decoration: underline;
+      }
+    }
   }
 
   @media only screen and (max-width: 768px) {

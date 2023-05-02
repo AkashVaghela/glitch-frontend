@@ -90,31 +90,30 @@ const Header: React.FC = () => {
 
       {/* Desktop navigation */}
       <HeaderNavBar>
-        {navbar.map((item) => {
-          return (
-            <Link
-              key={item.id}
-              href={`/category/${encodeURIComponent(item.category)}`}
-            >
-              {item.category}
-            </Link>
-          );
-        })}
+        <ul>
+          {navbar.map((item) => {
+            return (
+              <li key={item.id}>
+                <Link href={`/category/${encodeURIComponent(item.category)}`}>
+                  {item.category}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
       </HeaderNavBar>
 
       {loggedIn ? (
         <Profile>
           <button type="button">account</button>
           <ul>
-            <li>
-              <Link href="/user/profile">profile</Link>
-            </li>
-            <li>
-              <Link href="/user/bookmarks">bookmarks</Link>
-            </li>
-            <li>
-              <Link href="/">log out</Link>
-            </li>
+            {navigation.map((item) => {
+              return (
+                <li key={item.id}>
+                  <Link href={item.href}>{item.title}</Link>
+                </li>
+              );
+            })}
           </ul>
         </Profile>
       ) : (
