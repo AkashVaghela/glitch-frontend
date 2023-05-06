@@ -34,11 +34,10 @@ const InputContainer = styled.div`
 
   input:is([type="text"], [type="email"], [type="password"]) {
     width: 100%;
-    padding: 1rem;
+    padding: 1rem 1rem 1rem 4rem;
     border-radius: .4rem;
     background: transparent;
     border: 1px solid #a3a3a3;
-    padding-left: 4rem;
     color: #737373;
     font-size: 1.3rem;
   }

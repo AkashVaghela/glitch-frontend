@@ -12,8 +12,7 @@ const StyledFooter = styled.footer`
 const FooterDescription = styled.p`
   max-width: 64rem;
   margin-inline: auto;
-  padding: 1rem;
-  padding-top: 3rem;
+  padding: 3rem 1rem 1rem 1rem;
   font-size: 1.4rem;
   color: #d4d4d4;
 `;

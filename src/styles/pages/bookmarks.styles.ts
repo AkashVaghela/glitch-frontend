@@ -29,13 +29,13 @@ const Blog = styled.div`
 const BlogImage = styled.div`
   flex-basis: 22rem;
   flex-shrink: 0;
-  aspect-ration: 16/ 9;
+  aspect-ratio: 16/ 9;
   overflow: hidden;
 
   img {
     width: 100%;
     height: 100%;
-    object-fit: coner;
+    object-fit: cover;
   }
 `;
 

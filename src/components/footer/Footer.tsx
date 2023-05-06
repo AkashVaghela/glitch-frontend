@@ -1,8 +1,9 @@
+import React from "react";
 import Link from "next/link";
 import { StyledFooter, FooterDescription, Copyright } from "./footer.styles";
 import { HeaderLogo } from "../header/header.styles";
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <StyledFooter>
       <HeaderLogo>

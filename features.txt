@@ -1,7 +1,7 @@
 update content
 auth context
 API integration
-pagination in catrgories page (infinite loading)
+pagination in categories page (infinite loading)
 share functionality of blog
 bookmark/ unbookmark blog
 like/ unlike blog

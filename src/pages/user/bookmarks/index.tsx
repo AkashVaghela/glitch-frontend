@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactElement } from "react";
@@ -17,7 +17,7 @@ import {
 import BookmarkIcon from "@/assets/bookmark.svg";
 import { secondaryBlogs } from "@/data/data";
 
-const Fallback = () => {
+const Fallback: React.FC = () => {
   return <StyledFallback>You don&apos;t have bookmarks :(</StyledFallback>;
 };
 

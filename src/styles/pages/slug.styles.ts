@@ -52,7 +52,7 @@ const Icons = styled.div`
   img {
     @media only screen and (max-width: 425px) {
       width: 2rem;
-      aspect-ration: 1;
+      aspect-ratio: 1;
     }
   }
 `;
@@ -149,13 +149,13 @@ border-bottom: 1px solid #d4d4d4;
 const RecommendedBlogImage = styled.div`
 flex-basis: 22rem;
 flex-shrink: 0;
-aspect-ration: 16/ 9;
+aspect-ratio: 16/ 9;
 overflow: hidden;
 
 img {
   width: 100%;
   height: 100%;
-  object-fit: coner;
+  object-fit: cover;
 
 
 }

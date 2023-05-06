@@ -5,10 +5,10 @@ import {
   ErrorContainer,
 } from "@/styles/pages/reset-password.styles";
 import HideIcon from "@/assets/hide.svg";
-import { useState } from "react";
+import React, { useState } from "react";
 import { ErrorType, ResetPasswordType } from "@/types";
 
-const ResetPassword = () => {
+const ResetPassword: React.FC = () => {
   const [user, setUser] = useState<ResetPasswordType>({
     password: "",
     passwordConfirmation: "",
